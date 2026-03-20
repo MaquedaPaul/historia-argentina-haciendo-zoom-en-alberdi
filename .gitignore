@@ -1,0 +1,44 @@
+# ── Project-specific ──
+.gsd/
+.bg-shell/
+gsd.bat
+websearches.txt
+
+# OS files
+.DS_Store
+Thumbs.db
+*~
+
+# Editor
+*.swp
+*.swo
+.idea/
+.vscode/
+*.code-workspace
+
+# Env
+.env
+.env.*
+!.env.example
+
+# Dependencies
+node_modules/
+
+# Build outputs
+.next/
+dist/
+build/
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Other
+target/
+vendor/
+*.log
+coverage/
+.cache/
+tmp/
