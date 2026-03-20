@@ -9,11 +9,16 @@
   <!-- Tipografía -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <!-- Load fonts asynchronously to avoid render-blocking -->
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,400&family=Lato:wght@300;400;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,400&family=Lato:wght@300;400;700&display=swap"></noscript>
 
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+
+  <!-- Skip link for keyboard / screen-reader users -->
+  <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
 
   <!-- ========== HEADER ========== -->
   <header class="site-header" id="top">
@@ -74,13 +79,13 @@
   </aside>
 
   <!-- ========== CONTENIDO PRINCIPAL ========== -->
-  <main class="site-main">
+  <main class="site-main" id="main-content" tabindex="-1">
 
     <!-- Período Colonial: 1500–1800 -->
-    <section id="periodo-colonial" class="period period--colonial">
+    <section id="periodo-colonial" class="period period--colonial" aria-labelledby="titulo-colonial">
       <div class="period-header reveal reveal-fade">
         <span class="period-years">1500 – 1800</span>
-        <h2 class="period-title">El Período Colonial</h2>
+        <h2 class="period-title" id="titulo-colonial">El Período Colonial</h2>
         <p class="period-scope">Visión panorámica</p>
       </div>
       <div class="period-body">
@@ -295,13 +300,13 @@
     </section>
 
     <!-- Período Revolución y Organización: 1800–1860 (SECCIÓN PRINCIPAL) -->
-    <section id="periodo-revolucion" class="period period--revolucion period--featured">
+    <section id="periodo-revolucion" class="period period--revolucion period--featured" aria-labelledby="titulo-revolucion">
       <div class="period-featured-badge" aria-hidden="true">
         <span>Corazón del relato</span>
       </div>
       <div class="period-header reveal reveal-fade">
         <span class="period-years">1800 – 1860</span>
-        <h2 class="period-title">Revolución y Organización Nacional</h2>
+        <h2 class="period-title" id="titulo-revolucion">Revolución y Organización Nacional</h2>
         <p class="period-scope">Relato detallado — el corazón del proyecto</p>
       </div>
       <div class="period-body">
@@ -965,10 +970,10 @@
     </section>
 
     <!-- Período Organización Nacional: 1860–1900 -->
-    <section id="periodo-nacional" class="period period--nacional">
+    <section id="periodo-nacional" class="period period--nacional" aria-labelledby="titulo-nacional">
       <div class="period-header reveal reveal-fade">
         <span class="period-years">1860 – 1900</span>
-        <h2 class="period-title">Consolidación y Modernización</h2>
+        <h2 class="period-title" id="titulo-nacional">Consolidación y Modernización</h2>
         <p class="period-scope">Visión panorámica</p>
       </div>
       <div class="period-body">
@@ -1258,9 +1263,9 @@
   </footer>
 
   <!-- Ambient sound system (S03) — preload="none" prevents autoplay on load -->
-  <audio id="sound-colonial"   src="audio/colonial.mp3"   preload="none" loop></audio>
-  <audio id="sound-revolucion" src="audio/revolucion.mp3" preload="none" loop></audio>
-  <audio id="sound-nacional"   src="audio/nacional.mp3"   preload="none" loop></audio>
+  <audio id="sound-colonial"   src="audio/colonial.mp3"   preload="none" loop aria-hidden="true"></audio>
+  <audio id="sound-revolucion" src="audio/revolucion.mp3" preload="none" loop aria-hidden="true"></audio>
+  <audio id="sound-nacional"   src="audio/nacional.mp3"   preload="none" loop aria-hidden="true"></audio>
 
   <!-- Floating mute/unmute toggle — aria-pressed="false" = currently muted (default) -->
   <button
