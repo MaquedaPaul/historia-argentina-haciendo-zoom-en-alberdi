@@ -2803,6 +2803,21 @@
     title="Sonido ambiental"
   >🔇</button>
 
+  <!-- ===== Lightbox Modal ===== -->
+  <div id="img-modal" class="img-modal" role="dialog" aria-modal="true" aria-label="Vista ampliada de imagen" hidden>
+    <div class="img-modal__overlay" aria-hidden="true"></div>
+    <div class="img-modal__container">
+      <button class="modal-close" aria-label="Cerrar imagen">
+        <span aria-hidden="true">×</span>
+      </button>
+      <img class="img-modal__img" src="" alt="">
+      <div class="img-modal__caption modal-caption">
+        <p class="img-modal__alt-text"></p>
+        <p class="img-modal__attribution"></p>
+      </div>
+    </div>
+  </div>
+
   <script src="app.js"></script>
 </body>
 </html>
