@@ -51,7 +51,7 @@ grep -q "Escape\|keydown" app.js && echo "JS: Esc key handler PASS" || echo "JS:
   - Verify: `node -e "const h=require('fs').readFileSync('index.html','utf8'); ['id=\"img-modal\"','role=\"dialog\"','aria-modal=\"true\"','modal-close','modal-caption'].forEach(s=>{if(!h.includes(s))throw new Error('missing: '+s)}); console.log('PASS')"`
   - Done when: El elemento modal existe en el HTML con los atributos ARIA requeridos y los estilos del modal están en styles.css sin errores de sintaxis CSS.
 
-- [ ] **T02: Implementar JS de apertura, cierre y accesibilidad** `est:40m`
+- [x] **T02: Implementar JS de apertura, cierre y accesibilidad** `est:40m`
   - Why: El modal HTML/CSS del T01 es estático; este task agrega toda la interactividad: event delegation, población de contenido, focus trap, Esc, click-outside, y devolución de focus al trigger.
   - Files: `app.js`
   - Do: Agregar función `initImageModal()` dentro del IIFE de `app.js`, llamarla al final del IIFE (junto a las otras funciones `init*`). Usar event delegation en `document.body` (no en elementos individuales) para capturar clicks en `.card-image img`, incluyendo los que aparecen después de expandir accordeones (`.card-detail`).

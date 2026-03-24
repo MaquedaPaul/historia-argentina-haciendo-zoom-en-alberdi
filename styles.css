@@ -2719,3 +2719,8 @@ body::before {
     max-height: 65vh;
   }
 }
+
+/* Card image cursor — indicates images are clickable/zoomable */
+.card-image img {
+  cursor: zoom-in;
+}

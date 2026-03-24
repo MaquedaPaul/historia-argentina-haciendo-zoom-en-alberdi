@@ -195,6 +195,32 @@ node -e "eval(require('fs').readFileSync('app.js','utf8'))" 2>&1 | grep -v "^$" 
 - **Clave:** `.img-attribution` es un `<p>` dentro de `.card-image`, solo en 3 tarjetas (líneas 1725, 1980, 2740 en index.html). La mayoría de tarjetas no tienen `.img-attribution` — en ese caso `attrEl` debe quedar vacío/oculto.
 - Accordeones: `.card-detail` (con `hidden`) contiene texto pero NO imágenes (verificado en codebase). Sin embargo, la spec del M013-CONTEXT requiere event delegation en `document.body` para cubrir el caso general (futuras imágenes en accordeones).
 
+## Observability Impact
+
+**What changes when this task runs:**
+- `initImageModal()` attaches two `click` listeners on `document.body` and one `keydown` listener on `#img-modal`. Inspect via DevTools → Event Listeners panel on those elements.
+- When the modal is open: `document.getElementById('img-modal').hidden === false`; `document.querySelector('.img-modal__img').src` contains the image URL; `document.body.style.overflow === 'hidden'`.
+- When the modal is closed: `hidden` attribute is restored; `document.querySelector('.img-modal__img').src === ''`; `document.body.style.overflow === ''`.
+- `console.debug('[Modal] Image modal initialized.')` fires at page load if `initImageModal()` was called successfully.
+- `console.warn('[Modal] Required elements not found — modal disabled.')` fires if `#img-modal` or its required children are missing from the DOM.
+
+**Failure state visibility:**
+- If `initImageModal` was never called: no `click` listener on `document.body` for `.card-image img`; DevTools → Event Listeners on `body` will show no modal-related handler.
+- If modal stays open after Esc: inspect `modal.addEventListener('keydown', ...)` was attached — check DevTools Event Listeners on `#img-modal`.
+- If attribution shows when it shouldn't: `attrEl.style.display` should be `'none'` when no `.img-attribution` sibling found.
+
+**Diagnostic command:**
+```bash
+node -e "
+const js = require('fs').readFileSync('app.js','utf8');
+console.log('initImageModal defined:', /function initImageModal/.test(js));
+console.log('initImageModal called:', /initImageModal\(\)/.test(js));
+console.log('event delegation:', /document\.body\.addEventListener/.test(js));
+console.log('Esc handler:', /Escape/.test(js));
+console.log('focus restore:', /lastTrigger/.test(js));
+"
+```
+
 ## Expected Output
 
 - `app.js` — función `initImageModal()` insertada dentro del IIFE, llamada al final, con event delegation, attribution sourcing, focus management, Esc/click-outside, y sin errores de sintaxis

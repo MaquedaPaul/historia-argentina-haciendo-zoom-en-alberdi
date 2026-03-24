@@ -807,4 +807,109 @@
     console.debug(NAV_PREFIX, 'Hamburger menu initialized.');
   }
 
+  // ============================================================
+  // Lightbox Modal
+  // ============================================================
+  function initImageModal() {
+    var modal    = document.getElementById('img-modal');
+    var overlay  = modal && modal.querySelector('.img-modal__overlay');
+    var closeBtn = modal && modal.querySelector('.modal-close');
+    var modalImg = modal && modal.querySelector('.img-modal__img');
+    var altText  = modal && modal.querySelector('.img-modal__alt-text');
+    var attrEl   = modal && modal.querySelector('.img-modal__attribution');
+
+    if (!modal || !overlay || !closeBtn || !modalImg) {
+      console.warn('[Modal] Required elements not found — modal disabled.');
+      return;
+    }
+
+    var lastTrigger = null;
+
+    /** Open the modal with data from the clicked image. */
+    function openModal(img) {
+      // Populate image
+      modalImg.src = img.src;
+      modalImg.alt = img.alt || '';
+
+      // Caption: alt text
+      if (altText) altText.textContent = img.alt || '';
+
+      // Attribution: look for .img-attribution inside the same .card-image wrapper
+      var cardImage = img.closest('.card-image');
+      var attribution = cardImage && cardImage.querySelector('.img-attribution');
+      if (attrEl) {
+        if (attribution) {
+          attrEl.innerHTML = attribution.innerHTML;
+          attrEl.style.display = '';
+        } else {
+          attrEl.textContent = '';
+          attrEl.style.display = 'none';
+        }
+      }
+
+      // Store trigger and show modal
+      lastTrigger = img;
+      modal.removeAttribute('hidden');
+      closeBtn.focus();
+      document.body.style.overflow = 'hidden'; // prevent background scroll
+    }
+
+    /** Close the modal and restore focus. */
+    function closeModal() {
+      modal.setAttribute('hidden', '');
+      modalImg.src = '';
+      document.body.style.overflow = '';
+      if (lastTrigger) {
+        lastTrigger.focus();
+        lastTrigger = null;
+      }
+    }
+
+    // ---- Event: open modal on .card-image img click (event delegation) ----
+    document.body.addEventListener('click', function (e) {
+      var img = e.target.closest('.card-image img');
+      if (!img) return;
+      openModal(img);
+    });
+
+    // ---- Event: close via overlay click ----
+    overlay.addEventListener('click', closeModal);
+
+    // ---- Event: close via × button ----
+    closeBtn.addEventListener('click', closeModal);
+
+    // ---- Event: Esc closes modal; Tab cycles focus (focus trap) ----
+    modal.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') {
+        e.preventDefault();
+        closeModal();
+        return;
+      }
+      if (e.key === 'Tab') {
+        // Focus trap: only the close button is interactive — keep focus there
+        e.preventDefault();
+        closeBtn.focus();
+      }
+    });
+
+    // ---- Make images keyboard-accessible: Enter/Space opens modal ----
+    document.body.addEventListener('keydown', function (e) {
+      if (e.key !== 'Enter' && e.key !== ' ') return;
+      var img = document.activeElement;
+      if (!img || !img.matches('.card-image img')) return;
+      e.preventDefault();
+      openModal(img);
+    });
+
+    // ---- Make .card-image img focusable and visually indicate clickability ----
+    document.querySelectorAll('.card-image img').forEach(function (img) {
+      img.setAttribute('tabindex', '0');
+      img.style.cursor = 'zoom-in';
+    });
+
+    console.debug('[Modal] Image modal initialized.');
+  }
+
+  initImageModal();
+
 })();
