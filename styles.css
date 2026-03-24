@@ -2605,3 +2605,117 @@ body::before {
     transform: none;
   }
 }
+
+
+/* ===================================================================
+   Lightbox Modal
+   =================================================================== */
+
+.img-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: modal-fade-in 0.2s ease forwards;
+}
+
+.img-modal[hidden] {
+  display: none;
+}
+
+@keyframes modal-fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.img-modal__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.82);
+  cursor: pointer;
+}
+
+.img-modal__container {
+  position: relative;
+  z-index: 1;
+  max-width: min(90vw, 900px);
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.img-modal__img {
+  display: block;
+  max-width: 100%;
+  max-height: 75vh;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  border-radius: 4px;
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.6);
+}
+
+.img-modal__caption {
+  color: #e8dcc8;
+  text-align: center;
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  line-height: 1.5;
+  max-width: 640px;
+}
+
+.img-modal__alt-text {
+  margin: 0 0 0.25rem;
+  font-style: italic;
+}
+
+.img-modal__attribution {
+  margin: 0;
+  opacity: 0.75;
+  font-size: 0.78rem;
+}
+
+.modal-close {
+  position: absolute;
+  top: -2.5rem;
+  right: 0;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  color: #fff;
+  font-size: 1.5rem;
+  line-height: 1;
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.15s, border-color 0.15s;
+}
+
+.modal-close:hover,
+.modal-close:focus-visible {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.8);
+  outline: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .img-modal {
+    animation: none;
+  }
+}
+
+@media (max-width: 30rem) {
+  .img-modal__container {
+    max-width: 96vw;
+  }
+  .img-modal__img {
+    max-height: 65vh;
+  }
+}
