@@ -28,7 +28,7 @@ El script verifica:
 
 ## Tasks
 
-- [ ] **T01: Verificación en browser y fix de regresiones** `est:45m`
+- [x] **T01: Verificación en browser y fix de regresiones** `est:45m`
   - Why: El modal nunca fue probado en un browser real — S01 solo verificó estructura estática. Esta es la prueba de integración real: comportamiento dinámico, animaciones, focus, mobile, y la integración con los acordeones de M012.
   - Files: `index.html`, `styles.css`, `app.js`
   - Do: (1) Iniciar servidor local con `npx serve .` en el directorio del worktree y abrir `http://localhost:3000` en el browser via `browser_navigate`. (2) Clickear una imagen en la sección colonial → verificar que el modal abre, la imagen se muestra, el caption tiene texto. (3) Cerrar con botón ×, con Esc, y con click en overlay — verificar que el modal cierra y el foco regresa. (4) Expandir un card de M012 (`.card-expand-toggle`) y luego clickear la imagen revelada dentro del `.card-detail` — verificar que el event delegation funciona. (5) Verificar en viewport 375px (`browser_set_viewport`) que la imagen no desborda. (6) Si se encuentran bugs: aplicar fix en los archivos correspondientes y re-verificar. Bugs conocidos a vigilar según S01 Forward Intelligence: `document.body.style.overflow='hidden'` puede no funcionar en iOS Safari (workaround: agregar `document.body.style.position='fixed'` si el scroll no se bloquea en viewport mobile).
@@ -48,3 +48,24 @@ El script verifica:
 - `styles.css` — posibles fixes CSS (overflow iOS, z-index)
 - `app.js` — posibles fixes JS (overflow mobile, edge cases)
 - `.gsd/milestones/M013/slices/S02/verify-s02.js` — script de verificación estructural (nuevo)
+
+## Observability / Diagnostics
+
+**Runtime signals:**
+- `document.getElementById('img-modal').hasAttribute('hidden')` → `true` cuando cerrado, `false` cuando abierto
+- `document.querySelector('.card-image img').getAttribute('tabindex')` → `"0"` si `initImageModal()` se ejecutó correctamente; `null` si el script falló antes de llegar a esa función
+- `document.querySelector('.card-image img').style.cursor` → `"zoom-in"` si init OK
+- `document.body.style.overflow` y `document.documentElement.style.overflow` → ambos `"hidden"` con modal abierto, `""` con modal cerrado
+- Console DevTools: `[Modal] Image modal initialized.` confirma init exitoso; `[Modal] Required elements not found — modal disabled.` indica fallo de init
+
+**Failure visibility:**
+- Si el modal no abre al clickear una imagen: verificar que `#img-modal` está en el DOM ANTES de `<script src="app.js">` (bug encontrado en T01: el modal estaba después del script, causando que `getElementById('img-modal')` retornara `null`)
+- Si el scroll del body no se bloquea en iOS: verificar que ambos `document.body.style.overflow` y `document.documentElement.style.overflow` están seteados a `'hidden'`
+- Si el event delegation no funciona: `document.body.addEventListener` debe estar activo — testeable via `var img = document.querySelector('.card-image img'); img.click()` en consola
+
+**Inspection surfaces:**
+- `node .gsd/milestones/M013/slices/S02/verify-s02.js` — verificación estructural completa
+- `node -e "new Function(require('fs').readFileSync('app.js','utf8'))"` — syntax check rápido
+- Browser DevTools > Elements > `#img-modal[hidden]` — estado del modal
+
+**Redaction:** No hay datos de usuario ni secrets en esta slice — todos los valores son estructurales/DOM.

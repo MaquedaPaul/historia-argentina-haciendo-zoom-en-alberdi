@@ -852,6 +852,7 @@
       modal.removeAttribute('hidden');
       closeBtn.focus();
       document.body.style.overflow = 'hidden'; // prevent background scroll
+      document.documentElement.style.overflow = 'hidden'; // iOS Safari fix
     }
 
     /** Close the modal and restore focus. */
@@ -859,6 +860,7 @@
       modal.setAttribute('hidden', '');
       modalImg.src = '';
       document.body.style.overflow = '';
+      document.documentElement.style.overflow = ''; // iOS Safari fix
       if (lastTrigger) {
         lastTrigger.focus();
         lastTrigger = null;

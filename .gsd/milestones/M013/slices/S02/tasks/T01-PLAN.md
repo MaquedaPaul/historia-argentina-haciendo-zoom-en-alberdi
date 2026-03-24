@@ -70,3 +70,25 @@ Ejecutar desde `C:/Users/gabri/Desktop/historia/.gsd/worktrees/M013`.
 - `styles.css` — con cualquier fix CSS aplicado (si necesario)
 - `index.html` — sin cambios estructurales, o con fixes menores si se detectaron bugs en la estructura del modal
 - Confirmación visual (via browser) de que el modal funciona en todos los contextos requeridos
+
+## Observability Impact
+
+**Señales que cambian con esta tarea:**
+- `document.querySelector('.card-image img').getAttribute('tabindex')` pasa de `null` a `"0"` si init es exitoso
+- `document.querySelector('.card-image img').style.cursor` pasa de `""` a `"zoom-in"` si init es exitoso
+- Modal state inspectable via: `document.getElementById('img-modal').hasAttribute('hidden')`
+- Scroll lock inspectable via: `document.body.style.overflow` y `document.documentElement.style.overflow`
+
+**Cómo un agente futuro inspecciona esta tarea:**
+1. `node -e "new Function(require('fs').readFileSync('app.js','utf8'))"` — confirma que el JS no tiene errores de sintaxis
+2. `grep -n "img-modal\|app.js" index.html | head` — confirma que `#img-modal` aparece ANTES de `<script src="app.js">` (orden crítico)
+3. Browser: `document.querySelector('.card-image img').getAttribute('tabindex') === '0'` → init correcto
+4. Console DevTools: buscar `[Modal] Image modal initialized.`
+
+**Estado de fallo visible:**
+- `[Modal] Required elements not found — modal disabled.` en consola → `#img-modal` no estaba en DOM cuando se ejecutó el script
+- `tabindex` sigue siendo `null` → `initImageModal()` no corrió o corrió con error
+- El modal no abre al clickear → delegation no activa (checar orden HTML/script)
+
+**Bug encontrado y resuelto en esta tarea:**
+- `<script src="app.js">` estaba en línea 2806 y `<div id="img-modal">` en línea 2809 — el IIFE corría antes de que existiera el modal en el DOM. Fix: mover el modal HTML antes del script tag.
