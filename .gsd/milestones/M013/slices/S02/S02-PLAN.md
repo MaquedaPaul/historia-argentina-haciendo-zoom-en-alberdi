@@ -35,7 +35,7 @@ El script verifica:
   - Verify: `node -e "try{new Function(require('fs').readFileSync('app.js','utf8'));console.log('OK')}catch(e){console.error(e);process.exit(1)}"` pasa; el browser muestra el modal abierto y cerrado correctamente.
   - Done when: El modal abre y cierra en los tres contextos (colonial, revolución/nacional, dentro de acordeón expandido), el viewport mobile 375px no desborda, y el JS no tiene errores de sintaxis.
 
-- [ ] **T02: Escribir y ejecutar script de verificación estructural** `est:15m`
+- [x] **T02: Escribir y ejecutar script de verificación estructural** `est:15m`
   - Why: El deploy (S03) necesita un gate mecánico que confirme que la estructura del modal y la integridad de los archivos no se rompieron durante ningún fix. El script también sirve como regresión para futuros agentes.
   - Files: `.gsd/milestones/M013/slices/S02/verify-s02.js`
   - Do: Crear el script `verify-s02.js` en el directorio de la slice. El script debe: (1) Leer `index.html` y verificar con regex: `id="img-modal"`, `role="dialog"`, `aria-modal="true"`, atributo `hidden` en el elemento, `class="modal-close"`, `img-modal__img`. (2) Leer `app.js` y verificar: `initImageModal`, `document.body`, `Escape`, `openModal`, `closeModal`. (3) Verificar JS syntax con `new Function()`. (4) Contar `class="card-image"` en el HTML: debe ser ≥ 50 (hay 57 en el estado actual — que no haya regresión). (5) Reportar PASS/FAIL por check y salir con `process.exit(1)` si alguno falla. Ejecutar el script con `node verify-s02.js` desde el worktree root. El path relativo para leer archivos desde el script debe usar `path.join(__dirname, '../../../../../../', 'index.html')` — el script vive en `.gsd/milestones/M013/slices/S02/` y los archivos de contenido en el worktree root.
