@@ -1,0 +1,8 @@
+{
+  "name": "Historia Argentina 1500-1900",
+  "description": "Página web interactiva que narra la historia argentina desde 1500 hasta 1900, con énfasis especial en el período 1800-1860",
+  "created": "2026-03-18",
+  "version": "1.0.0",
+  "tech_stack": ["HTML", "CSS", "JavaScript"],
+  "unique_milestone_ids": false
+}

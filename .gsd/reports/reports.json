@@ -1,0 +1,72 @@
+{
+  "version": 1,
+  "projectName": "historia",
+  "projectPath": "C:\\Users\\gabri\\Desktop\\historia",
+  "gsdVersion": "2.32.0",
+  "entries": [
+    {
+      "filename": "M001-2026-03-18T04-33-15.html",
+      "generatedAt": "2026-03-18T04:33:15.435Z",
+      "milestoneId": "M001",
+      "milestoneTitle": "Fundación y Estructura Base",
+      "label": "M001: Fundación y Estructura Base",
+      "kind": "milestone",
+      "totalCost": 10.583019999999998,
+      "totalTokens": 14801558,
+      "totalDuration": 2122916,
+      "doneSlices": 3,
+      "totalSlices": 3,
+      "doneMilestones": 5,
+      "totalMilestones": 5,
+      "phase": "complete"
+    },
+    {
+      "filename": "M002-2026-03-19T02-06-24.html",
+      "generatedAt": "2026-03-19T02:06:24.595Z",
+      "milestoneId": "M002",
+      "milestoneTitle": "Período 1500-1800 (Panorámico)",
+      "label": "M002: Período 1500-1800 (Panorámico)",
+      "kind": "milestone",
+      "totalCost": 31.651312499999996,
+      "totalTokens": 42915759,
+      "totalDuration": 5263233,
+      "doneSlices": 5,
+      "totalSlices": 5,
+      "doneMilestones": 2,
+      "totalMilestones": 5,
+      "phase": "pre-planning"
+    },
+    {
+      "filename": "M003-2026-03-19T04-47-32.html",
+      "generatedAt": "2026-03-19T04:47:32.837Z",
+      "milestoneId": "M003",
+      "milestoneTitle": "Período 1800-1860 (Foco Detallado)",
+      "label": "M003: Período 1800-1860 (Foco Detallado)",
+      "kind": "milestone",
+      "totalCost": 53.665826849999995,
+      "totalTokens": 87699520,
+      "totalDuration": 11573712,
+      "doneSlices": 7,
+      "totalSlices": 7,
+      "doneMilestones": 3,
+      "totalMilestones": 5,
+      "phase": "pre-planning"
+    },
+    {
+      "filename": "M004-2026-03-20T00-45-54.html",
+      "generatedAt": "2026-03-20T00:45:54.493Z",
+      "milestoneId": "M004",
+      "milestoneTitle": "Período 1860–1900 (Panorámico)",
+      "label": "M004: Período 1860–1900 (Panorámico)",
+      "kind": "milestone",
+      "totalCost": 62.437740549999994,
+      "totalTokens": 104466696,
+      "totalDuration": 13998176,
+      "doneSlices": 9,
+      "totalSlices": 9,
+      "doneMilestones": 4,
+      "totalMilestones": 5,
+      "phase": "pre-planning"
+    }
+  ]
+}

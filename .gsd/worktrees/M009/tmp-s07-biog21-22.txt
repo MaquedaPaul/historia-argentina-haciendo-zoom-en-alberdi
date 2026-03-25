@@ -1,0 +1,126 @@
+
+          <h4 class="sub-period__subtitle reveal reveal-fade" style="--reveal-delay: 0ms">El rechazo del viaje: análisis</h4>
+          <div class="events-grid events-grid--certeza" aria-label="El rechazo del viaje a Estados Unidos: hechos e interpretación">
+
+            <!-- BIOG-21: La devolución de la libranza — el gesto de independencia -->
+            <article id="BIOG-21" class="event-card card-hecho reveal reveal-slide" data-certeza="hecho" style="--reveal-delay: 0ms">
+              <div class="event-card__body">
+                <header class="event-card__header">
+                  <span class="event-card__year">1834</span>
+                  <span class="event-card__certeza-badge badge--hecho" aria-label="Hecho verificado">Hecho</span>
+                  <h4 class="event-card__title">La devolución de la libranza: el gesto de independencia</h4>
+                </header>
+                <div class="event-card__content">
+                  <p>
+                    En el transcurso de sus visitas a Quiroga —el hombre más poderoso del interior
+                    federal— Alberdi recibió una propuesta de difícil rechazo: una <em>libranza
+                    bancaria</em> (orden de pago contra el Banco) para financiarle un viaje de estudios
+                    a los Estados Unidos. Quiroga consideraba el viaje más formativo que permanecer en
+                    Buenos Aires. Alberdi aceptó la idea —por un día.
+                  </p>
+                  <p>
+                    Al amanecer siguiente, el joven tucumano de veintitrés años regresó a devolver el
+                    dinero. El gesto era de una claridad simbólica inocultable: Alberdi ponía su
+                    independencia intelectual por encima del patronazgo del caudillo más temible que
+                    había conocido. En el otoño de 1834, cuando Buenos Aires vivía bajo la sombra de las
+                    guerras civiles y el nombre de Quiroga valía más que el de cualquier institución,
+                    renunciar a su dinero era renunciar a una forma de obligación política que Alberdi
+                    no estaba dispuesto a contraer.
+                  </p>
+                  <p>
+                    Alberdi lo narra en sus <em>Obras Completas</em> sin explicar las razones: solo registra
+                    que hizo «una visita respetuosa» y devolvió la orden contra el Banco, «renunciando al
+                    proyecto de viaje para los Estados Unidos». El tono es sereno, casi neutro. Pero la
+                    decisión —devolver dinero al hombre más poderoso del interior federal— no era neutra en
+                    absoluto. Era la primera afirmación pública de lo que sería la constante de su vida:
+                    la independencia de criterio como condición de la escritura.
+                  </p>
+                  <span class="card-nota-certeza">
+                    Nota: la caracterización de la devolución como «gesto de independencia intelectual» es
+                    una lectura historiográfica del episodio documentado, no una descripción que Alberdi
+                    formule explícitamente en el pasaje de <em>Obras Completas</em>. El hecho documentado
+                    es la devolución misma; el significado político y simbólico es interpretación de sus
+                    biógrafos (Mayer, Halperin Donghi), desarrollada en la tarjeta siguiente.
+                  </span>
+                </div>
+                <footer class="event-card__footer">
+                  <cite class="event-card__cite">Alberdi, J. B., <em>Obras Completas</em>, La Tribuna Nacional, Buenos Aires, 1886–1887; Mayer, J. M., <em>Alberdi y su tiempo</em>, EUDEBA, Buenos Aires, 1963.</cite>
+                </footer>
+              </div>
+            </article>
+
+            <!-- BIOG-22: Por qué rechazó el viaje — el análisis historiográfico -->
+            <article id="BIOG-22" class="event-card card-opinion reveal reveal-slide" data-certeza="opinion" style="--reveal-delay: 80ms">
+              <div class="event-card__body">
+                <div class="card-certeza-indicator">
+                  <span class="card-certeza-indicator__icon" aria-hidden="true">💬</span>
+                  <span class="card-certeza-indicator__label">Interpretación historiográfica</span>
+                </div>
+                <header class="event-card__header">
+                  <span class="event-card__year">1834</span>
+                  <span class="event-card__certeza-badge badge--opinion" aria-label="Interpretación historiográfica">Opinión</span>
+                  <h4 class="event-card__title">¿Por qué devolvió la libranza? El análisis de los biógrafos</h4>
+                </header>
+                <div class="event-card__content">
+                  <p>
+                    Las razones de la devolución no están en <em>Obras Completas</em>. Los biógrafos las
+                    infieren a partir del contexto político e intelectual de Alberdi en 1834 y de sus
+                    decisiones posteriores. Jorge M. Mayer —autor de la monografía biográfica más sistemática
+                    sobre Alberdi— y Tulio Halperin Donghi identifican cuatro factores convergentes:
+                  </p>
+                  <blockquote class="card-opinion__quote">
+                    <p>
+                      <strong>1. Independencia del patronazgo federal.</strong> Alberdi era porteño
+                      de formación y de alineamiento generacional unitario: era parte del círculo de
+                      Echeverría y de la joven intelectualidad que rechazaba el caudillismo como forma
+                      política. Aceptar el dinero de Quiroga —el más poderoso de los caudillos
+                      federales— habría creado una obligación difícil de sostener para quien se
+                      preparaba a construir una carrera intelectual crítica del orden rosista.
+                    </p>
+                    <p>
+                      <strong>2. Buenos Aires como epicentro intelectual en formación.</strong>
+                      Esteban Echeverría había regresado de Europa en 1830 y estaba reorganizando
+                      el debate político e intelectual porteño. El Salón Literario de Marcos Sastre
+                      y la embrionaria Asociación de Mayo estaban tomando forma. El ambiente que
+                      Alberdi necesitaba —para leer, escribir, debatir— estaba justo allí, no al
+                      otro lado del océano.
+                    </p>
+                    <p>
+                      <strong>3. Europa, no los Estados Unidos, era el destino real.</strong>
+                      Cuando Alberdi finalmente salió de Buenos Aires —en 1838, forzado por Rosas—
+                      fue primero a Montevideo y luego a Chile. Nunca fue a los Estados Unidos.
+                      El modelo intelectual que buscaba era europeo: el derecho constitucional
+                      francés, la economía política inglesa, el romanticismo del Vormärz alemán.
+                      Un viaje a los Estados Unidos, costeado por Quiroga, no era su proyecto.
+                    </p>
+                    <p>
+                      <strong>4. El <em>Fragmento preliminar</em> requería Buenos Aires.</strong>
+                      En 1837 Alberdi publicaría su primera obra mayor — el <em>Fragmento preliminar
+                      al estudio del Derecho</em> — y participaría en el Salón Literario. Ambas cosas
+                      requerían presencia en Buenos Aires, conexiones con Echeverría y Sastre, y el
+                      tiempo de maduración intelectual que un viaje cortocircuitado habría interrumpido.
+                    </p>
+                    <footer class="card-opinion__attribution">
+                      Lectura historiográfica: Mayer, J. M., <cite><em>Alberdi y su tiempo</em></cite>,
+                      EUDEBA, Buenos Aires, 1963 (2.ª ed., Academia Nacional de Derecho, 1973);
+                      Halperin Donghi, T., <cite><em>Letrados &amp; pensadores</em></cite>,
+                      Emecé, Buenos Aires, 2013.
+                    </footer>
+                  </blockquote>
+                  <span class="card-nota-certeza">
+                    Nota: ninguno de estos cuatro factores está declarado explícitamente por Alberdi
+                    en el pasaje de <em>Obras Completas</em> que narra la devolución. Son inferencias
+                    historiográficas de Mayer y Halperin Donghi, basadas en el contexto político de
+                    1834 y en las decisiones posteriores de Alberdi (su exilio de 1838 hacia Montevideo
+                    y Chile, su participación en el Salón Literario de 1837, y la orientación
+                    europeísta de toda su obra). Se presentan como lectura interpretativa, no como
+                    hechos documentados.
+                  </span>
+                </div>
+                <footer class="event-card__footer">
+                  <cite class="event-card__cite">Mayer, J. M., <em>Alberdi y su tiempo</em>, EUDEBA, Buenos Aires, 1963; Halperin Donghi, T., <em>Letrados &amp; pensadores</em>, Emecé, Buenos Aires, 2013.</cite>
+                </footer>
+              </div>
+            </article>
+
+          </div>

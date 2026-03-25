@@ -1,0 +1,182 @@
+# S08-CONTENT-DRAFT: Los escritos de Alberdi que leyó Facundo Quiroga
+
+**Slice:** S08
+**Milestone:** M007
+**Date drafted:** 2026-03-22
+**Status:** Ready for T02 integration
+
+---
+
+## Nota de Inserción
+
+- **Anchor de inserción:** `</div><!-- /#rev-alberdi-quiroga -->` — línea **1094** de `index.html` (confirmado con `grep -n '/#rev-alberdi-quiroga' index.html`).
+- **Baseline `data-certeza`:** 56 instancias (confirmado con `grep -c 'data-certeza' index.html`).
+- **Baseline `.reveal`:** 79 elementos (confirmado: `grep -c 'reveal reveal' index.html`).
+- **Baseline `sub-nav__link`:** 6 (invariante — no se añade sub-período nuevo).
+- **Target post-inserción:** `data-certeza` → 58 (+2 cards), `.reveal` → 82 (+1 h4 + 2 cards).
+- **Pre-flight antes de T02:** `grep -c 'BIOG-23\|BIOG-24' index.html` → debe ser 0.
+
+---
+
+## Bloque HTML para insertar (completo)
+
+Insertar ANTES de `</div><!-- /#rev-alberdi-quiroga -->` (línea 1094).
+
+```html
+          <h4 class="sub-period__subtitle reveal reveal-fade" style="--reveal-delay: 0ms">Los textos de Alberdi en 1834 y la evaluación de Quiroga</h4>
+          <div class="events-grid events-grid--certeza" aria-label="Los escritos de Alberdi disponibles en 1834 y la base de la evaluación de Quiroga">
+
+            <!-- BIOG-23: Los textos de Alberdi en 1834 — catálogo de obra disponible -->
+            <article id="BIOG-23" class="event-card card-hecho reveal reveal-slide" data-certeza="hecho" style="--reveal-delay: 0ms">
+              <div class="event-card__body">
+                <header class="event-card__header">
+                  <span class="event-card__year">1832–1834</span>
+                  <span class="event-card__certeza-badge badge--hecho" aria-label="Hecho verificado">Hecho</span>
+                  <h4 class="event-card__title">Los escritos de Alberdi: obra mínima de una promesa en formación</h4>
+                </header>
+                <div class="event-card__content">
+                  <p>
+                    Cuando Alberdi se presentó ante Quiroga en octubre o noviembre de 1834, era un autor de
+                    apenas dos textos publicados — ambos sobre música, escritos dos años antes:
+                  </p>
+                  <ul>
+                    <li>
+                      <em>El espíritu de la música; a la capacidad de todo el mundo</em> (Buenos Aires, 1832,
+                      31 pp.) — ensayo de estética musical publicado en el contexto de las tertulias porteñas
+                      de la época, luego recogido en <em>Obras Completas</em>, t. I, pp. 29–51.
+                    </li>
+                    <li>
+                      <em>Ensayo sobre un método nuevo para aprender a tocar el piano con la mayor facilidad</em>
+                      (Buenos Aires, 1832, 31 pp.) — texto pedagógico de corte técnico-musical, también de 1832.
+                    </li>
+                    <li>
+                      <em>Memoria descriptiva sobre Tucumán</em> (1834) — su primer texto político, encargado
+                      por el propio gobernador Heredia para describir la geografía y tradiciones de la provincia.
+                      Publicada a fines de ese mismo año; su fecha exacta de circulación respecto del encuentro
+                      con Quiroga no está establecida.
+                    </li>
+                  </ul>
+                  <p>
+                    Dos textos sobre música y uno sobre Tucumán: Alberdi era una promesa intelectual con obra
+                    mínima, no un pensador establecido. Cuando Quiroga apostó a financiar su formación en los
+                    Estados Unidos, apostaba al potencial de un joven de 24 años —recomendado por un aliado
+                    federal clave— no al historial de un escritor consolidado.
+                  </p>
+                  <span class="card-nota-certeza">
+                    Nota: ninguna fuente consultada documenta que Quiroga haya leído alguno de estos textos.
+                    La base de su evaluación fue la carta de Heredia y las conversaciones directas con Alberdi,
+                    no la lectura de su obra publicada.
+                  </span>
+                </div>
+                <footer class="event-card__footer">
+                  <cite class="event-card__cite">Laborde, Francisco, <em>Estudio crítico: Juan Bautista Alberdi</em>, larramendi.es; Wikipedia EN, «Juan Bautista Alberdi»; elhistoriador.com.ar (Felipe Pigna, 2020).</cite>
+                </footer>
+              </div>
+            </article>
+
+            <!-- BIOG-24: ¿Qué leyó Quiroga? — laguna documental -->
+            <article id="BIOG-24" class="event-card card-rumor reveal reveal-slide" data-certeza="rumor" style="--reveal-delay: 80ms">
+              <div class="card-certeza-indicator">
+                <span class="card-certeza-icon" aria-hidden="true">⚠️</span>
+                <span class="card-certeza-badge-rumor">Rumor</span>
+              </div>
+              <div class="event-card__body">
+                <header class="event-card__header">
+                  <span class="event-card__year">1834</span>
+                  <h4 class="event-card__title">¿Qué leyó Quiroga? La pregunta sin respuesta documental</h4>
+                </header>
+                <div class="event-card__content">
+                  <p class="event-card__excerpt card-rumor__text">
+                    La pregunta que da título a este arco narrativo —¿qué escritos de Alberdi leyó Facundo
+                    Quiroga?— no tiene respuesta en las fuentes disponibles. Lo que sí está documentado, y ya
+                    narrado en esta sección, es lo que Quiroga leyó: la carta de recomendación de Heredia.
+                    No hay registro de que Quiroga haya leído ningún texto publicado de Alberdi.
+                  </p>
+                  <p class="event-card__excerpt card-rumor__text">
+                    Si leyó algo de su obra, el candidato más plausible es la <em>Memoria descriptiva sobre
+                    Tucumán</em> (1834): fue encargada por el mismo Heredia, trataba un territorio que Quiroga
+                    conocía bien, y se publicó en el mismo año del encuentro. Pero la cadena de transmisión
+                    —que Heredia haya enviado un ejemplar junto a la carta, que Quiroga lo haya leído— no
+                    está documentada. Es una conjetura razonable, no un hecho.
+                  </p>
+                  <p class="event-card__excerpt card-rumor__text">
+                    Lo que la evidencia sí sostiene es el tipo de apuesta que Quiroga hacía: valoraba a Alberdi
+                    como promesa formable —un joven tucumano, letrado, recomendado por un aliado federal de
+                    confianza— no como intelectual con obra reconocida. El sistema de recomendaciones personales
+                    era el mecanismo de evaluación del capital humano en la Argentina de 1834. La carta de Heredia
+                    era el currículum de Alberdi.
+                  </p>
+                  <p class="event-card__excerpt card-rumor__text">
+                    Quiroga partió en enero de 1835 hacia el interior en misión mediadora entre las provincias
+                    de Salta y Tucumán. Fue asesinado en Barranca Yaco (Córdoba) el 16 de febrero de 1835 —
+                    tres meses después del encuentro con Alberdi. Ninguna fuente ha registrado sus impresiones
+                    sobre la obra del joven tucumano. La laguna es históricamente real.
+                  </p>
+                </div>
+                <footer class="card-rumor__origin">
+                  <span class="card-rumor__origin-icon" aria-hidden="true">🔍</span>
+                  <p class="card-rumor__origin-text">
+                    <strong>Laguna documental:</strong> ninguna de las fuentes consultadas —ni las secundarias
+                    (elhistoriador.com.ar/Pigna; larramendi.es/Laborde) ni las primarias (<em>Obras Completas</em>
+                    de Alberdi, t. VIII)— documenta qué textos de Alberdi llegaron a manos de Quiroga, ni si los
+                    leyó. La conjetura sobre la <em>Memoria sobre Tucumán</em> se basa en el nexo Heredia y la
+                    contemporaneidad de publicación, sin evidencia directa.
+                  </p>
+                </footer>
+              </div>
+            </article>
+
+          </div>
+```
+
+---
+
+## Self-Check: Capa 1 — Checks esperados post-inserción en `index.html`
+
+| Check | Comando | Valor esperado | Estado |
+|-------|---------|----------------|--------|
+| data-certeza count | `grep -c 'data-certeza' index.html` | 58 | — |
+| BIOG-23 presente | `grep -c 'id="BIOG-23"' index.html` | 1 | — |
+| BIOG-24 presente | `grep -c 'id="BIOG-24"' index.html` | 1 | — |
+| rev-alberdi-quiroga invariante | `grep -c 'rev-alberdi-quiroga' index.html` | 3 | — |
+| sub-nav__link invariante | `grep -c 'sub-nav__link' index.html` | 6 | — |
+
+---
+
+## Self-Check: Must-Haves de T01
+
+| Requisito | Verificación en el draft | Estado |
+|-----------|--------------------------|--------|
+| BIOG-23 usa `card-hecho`, `data-certeza="hecho"`, `--reveal-delay: 0ms` | ✓ líneas del article BIOG-23 | ✅ |
+| BIOG-24 usa `card-rumor`, `data-certeza="rumor"`, `--reveal-delay: 80ms` | ✓ líneas del article BIOG-24 | ✅ |
+| BIOG-24 tiene `card-certeza-indicator`, `card-certeza-icon` ⚠️, `card-certeza-badge-rumor` | ✓ div.card-certeza-indicator presente | ✅ |
+| BIOG-24 tiene `card-rumor__origin` footer | ✓ footer.card-rumor__origin presente | ✅ |
+| BIOG-23 tiene `card-nota-certeza` span | ✓ span.card-nota-certeza en BIOG-23 | ✅ |
+| BIOG-24 NO inventa reacción ni opinión de Quiroga | ✓ solo declara la laguna documental | ✅ |
+| Ninguna card repite citas verbatim de BIOG-17 / BIOG-18 | ✓ sin «El general Quiroga me acogió», sin «Lo visité con repetición», sin «Al día siguiente» | ✅ |
+| Draft incluye línea exacta del anchor | ✓ línea 1094 confirmada con grep | ✅ |
+
+---
+
+## Arco Narrativo BIOG-17…BIOG-24 — Tabla de Coherencia
+
+| Card | Certeza | Título | Rol en el arco |
+|------|---------|--------|----------------|
+| BIOG-17 | hecho | La carta de Heredia: cómo Alberdi conoció a Facundo Quiroga | El encuentro mediado por carta de recomendación |
+| BIOG-18 | hecho | "Ese hombre extraordinario": las conversaciones de Alberdi con Quiroga | La propuesta del viaje y la devolución de la libranza |
+| BIOG-19 | hecho | El Tigre de los Llanos — perfil biográfico de Facundo Quiroga | Quién era Quiroga: caudillo, militar, hombre de la política federal |
+| BIOG-20 | hecho | El círculo de Quiroga en Buenos Aires | El entorno en BA: Santos Ortiz, Braulio Costa, la misión a Tucumán |
+| BIOG-21 | hecho | La devolución de la libranza | El acto de independencia intelectual de Alberdi |
+| BIOG-22 | opinion | Por qué Alberdi rechazó el viaje: análisis historiográfico | El Salón Literario en formación como contexto del rechazo |
+| BIOG-23 | hecho | Los escritos de Alberdi: obra mínima de una promesa en formación | Catálogo de los tres textos; la evaluación de Quiroga era sobre el potencial, no la obra |
+| BIOG-24 | rumor | ¿Qué leyó Quiroga? La pregunta sin respuesta documental | Cierre epistémico: la pregunta del slice no tiene respuesta documental; la laguna es históricamente real |
+
+---
+
+## Notas de implementación para T02
+
+- Usar el patrón CRLF-safe de Node.js: `split('\r\n')` + `findIndex` + `splice` + `join('\r\n')`.
+- Insertar ANTES del índice que contiene `</div><!-- /#rev-alberdi-quiroga -->` (no después).
+- El bloque completo incluye: `<h4>` + `<div class="events-grid events-grid--certeza">` + BIOG-23 + BIOG-24 + `</div>`.
+- El `h4` y el `div.events-grid` NO llevan `id`; el `h4` lleva `class="sub-period__subtitle reveal reveal-fade"`.
+- Temp file: `tmp-s08-biog23-24.txt` con el Write tool (no heredoc).

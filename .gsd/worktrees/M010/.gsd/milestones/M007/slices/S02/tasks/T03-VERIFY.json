@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "taskId": "T03",
+  "unitId": "M007/S02/T03",
+  "timestamp": 1774054154314,
+  "passed": true,
+  "discoverySource": "none",
+  "checks": [],
+  "runtimeErrors": [
+    {
+      "source": "browser",
+      "severity": "error",
+      "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
+      "blocking": false
+    },
+    {
+      "source": "browser",
+      "severity": "error",
+      "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
+      "blocking": false
+    }
+  ]
+}
