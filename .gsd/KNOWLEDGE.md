@@ -296,3 +296,30 @@ When a vanilla JS IIFE (Immediately Invoked Function Expression) calls `document
 - **`git checkout --ours <file>` does NOT work with force-added files when `.gitignore` includes the directory.** Git reports "The following paths are ignored by one of your .gitignore files: .gsd" even for force-tracked files. **Work-around:** The conflict markers are already in the file — just rewrite the file content directly (write tool) or use `git show :2:<path> > <path>` to extract the HEAD version.
 - **In practice:** After a clean merge resolution, `git status` may show "all conflicts fixed but you are still merging" with zero staged changes — this happens when all conflicted files are gitignored (the resolution checkout was a no-op at the index level but the conflict was already marked resolved). In this case, `git commit --no-edit` completes the merge normally.
 - **The correct pre-merge check:** `git log --oneline main..origin/main` shows commits on remote not in local; if all are `.gsd/`-only, the divergence is safe to absorb with `--ours` resolution.
+
+## Batch Card Markup Processing with Node.js Script
+
+**Context:** M022-S01 needed to apply card-expand-toggle/card-detail wrapping to 76 cards across all periods (colonial, revolucion, nacional) in index.html.
+
+- **Write the processing script to a .js temp file, run it, then delete it** — more reliable than inline `node -e` one-liners for complex multi-step DOM manipulation with multiple regex patterns.
+- **Threshold of 400 chars on excerpt text** produces visible excerpts of ~280 chars after HTML entity decoding — a comfortable reading length before the "Ver más" toggle. Lower thresholds produce more truncation and more buttons; higher thresholds let medium-length cards through untruncated.
+- **Cards with images are taller than text-only cards even when collapsed** (~800px vs ~500px). If a strict pixel height limit is required, apply `max-height` + `object-fit: cover` to `.card-image img` separately. A batch processing pass that only wraps text excerpts will not bring image cards under ~420px.
+- **Grep verification after processing:** `grep -c "card-expand-toggle" index.html` gives a reliable count. Each toggle produces ~3 HTML lines, so the grep count should be ~3× the number of cards processed.
+
+## content-visibility: auto — When It Hurts Instead of Helps
+
+**Context:** M022-S02 — `period--revolucion` with `content-visibility: auto` caused layout jank instead of improving performance.
+
+- **`content-visibility: auto` is a performance win only for elements that are actually off-screen.** If a section occupies 80%+ of the page height, the browser rarely discards it from rendering — and when it does need to re-render, the reflow from the incorrect `contain-intrinsic-size` placeholder causes a visible layout jump.
+- **The diagnostic:** measure `el.offsetHeight` for each period in the browser console. Compare against `contain-intrinsic-size`. If real height >> hint, the placeholder causes CLS when the section exits and re-enters the viewport.
+- **The fix for an always-visible section:** `content-visibility: visible; contain-intrinsic-size: none` as a per-element CSS override. This restores normal rendering for that element without touching others.
+- **`contain-intrinsic-size` value strategy:** Use the average of sibling sections rather than individual measurements when sections are similar in size. This reduces CLS without creating three separately-maintained values. Update when a section grows by more than ~50%.
+- **Authoritative diagnostic command:** open DevTools console and run: `document.querySelectorAll('.period').forEach(el => console.log(el.id, el.offsetHeight))` — compare output against `contain-intrinsic-size` value in styles.css.
+
+## position:fixed Elements — Use calc(nav-height + offset) Not top:50%
+
+**Context:** M022-S02 — `.timeline-aside` was positioned at `top: 50%; transform: translateY(-50%)` causing it to overlap the hero and cards on initial load.
+
+- **`top: 50%; transform: translateY(-50%)` centers an element in the viewport** — it has no awareness of sticky nav height or page scroll position. For elements that should be visible below the nav, this formula will overlap nav and content on short viewports.
+- **The correct pattern for a fixed sidebar that should appear below a sticky nav:** `top: calc(var(--nav-height, <fallback>) + <desired-gap>)`. The CSS custom property lets JS update the value dynamically (e.g., after hamburger opens) while the fallback handles the case before JS runs.
+- **Always pair with `display: none` at mobile breakpoints** for fixed sidebars — on narrow screens, a fixed element competes with the main content for horizontal space and is better hidden via breakpoint than repositioned.

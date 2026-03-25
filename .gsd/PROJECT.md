@@ -4,7 +4,7 @@
 Página web interactiva, multimedia e inmersiva que narra la historia argentina desde 1500 hasta 1900. Juan Bautista Alberdi como hilo conductor narrativo. Tres niveles de certeza en el contenido (hecho / opinión / rumor). Verificación histórica obligatoria.
 
 ## Estado actual
-M001–M021 completados. M022 en ejecución (Pulido Visual Global — fixes de sub-nav overflow, cards largas sin truncar, layout jumps por content-visibility, y timeline lateral mal posicionado). Sitio live en producción en GitHub Pages.
+M001–M022 completados. Sitio live en producción en GitHub Pages. M022 (Pulido Visual Global) resolvió: sub-nav scrolleable, 76 cards truncadas con expand/collapse en todos los períodos, layout jumps eliminados con content-visibility calibrada, y timeline lateral reposicionado. El sitio está listo para compartir.
 
 **URL pública:** https://maquedapaul.github.io/historia-argentina-haciendo-zoom-en-alberdi/
 **Repo:** https://github.com/MaquedaPaul/historia-argentina-haciendo-zoom-en-alberdi (público, rama main)
@@ -21,9 +21,9 @@ HTML5 + CSS3 + JavaScript vanilla. Single page. Zero build step. Deploy en hosti
 Texto + imágenes + videos + animaciones + sonidos ambientales. Sin narración de voz.
 
 ## Key Files
-- `index.html` — Estructura HTML completa: sección colonial (7 cards, colonial-timeline), sección revolución (20 cards en 4 sub-períodos, sub-nav, revolucion-timeline 1800-1860, expand/collapse en 4 cards), sección nacional (7 cards, nacional-timeline 1860-1900, alberdi-quote cierre), footer con epígrafe. Total 52 reveal elements.
-- `styles.css` — Sistema de diseño CSS: timeline lateral, reveal animations, certeza variants (hecho/opinión/rumor), card images, colonial-timeline, sub-nav sticky, revolucion-timeline con alternating labels, expand/collapse transitions, nacional-timeline con nac- keyframes, hamburger menu (max-height transition, aria-expanded states), parallax ::before layer (--parallax-y custom property), @keyframes key-event-glow (golden box-shadow glow), responsive breakpoints, prefers-reduced-motion (12+ blocks)
-- `app.js` — IIFE con: scroll spy (main sections), smooth scroll, reveal-on-scroll (52 elements), image fallback handlers, initSubNav() (IntersectionObserver para sub-períodos), initExpandCollapse() (event delegation con rAF expand pattern), initHamburgerMenu() (toggle con transitionend + --nav-height), initParallax() (passive scroll + RAF + --parallax-y CSS custom property, prefers-reduced-motion guard), initImageModal() (lightbox con event delegation en document.body, focus trap, Esc/overlay/button close, iOS scroll-lock en body+documentElement)
+- `index.html` — Estructura HTML completa: sección colonial (7 cards, colonial-timeline), sección revolución (20 cards en 4 sub-períodos, sub-nav, revolucion-timeline 1800-1860, expand/collapse en 76 cards vía card-expand-toggle), sección nacional (7 cards, nacional-timeline 1860-1900, alberdi-quote cierre), footer con epígrafe. Total 52 reveal elements. **M022: 76 cards con excerpt truncado ~280 chars + card-detail hidden.**
+- `styles.css` — Sistema de diseño CSS: timeline lateral, reveal animations, certeza variants (hecho/opinión/rumor), card images, colonial-timeline, sub-nav sticky (M022: overflow-x:auto + flex-start), revolucion-timeline con alternating labels, expand/collapse transitions, nacional-timeline con nac- keyframes, hamburger menu (max-height transition, aria-expanded states), parallax ::before layer (--parallax-y custom property), @keyframes key-event-glow (golden box-shadow glow), responsive breakpoints, prefers-reduced-motion (12+ blocks). **M022: contain-intrinsic-size 3200px; period--revolucion content-visibility:visible; timeline-aside top:calc(nav-height+3rem).**
+- `app.js` — IIFE con: scroll spy (main sections), smooth scroll, reveal-on-scroll (52 elements), image fallback handlers, initSubNav() (IntersectionObserver para sub-períodos), initExpandCollapse() (event delegation con rAF expand pattern, **M022: scope .site-main cubre todos los períodos**), initHamburgerMenu() (toggle con transitionend + --nav-height), initParallax() (passive scroll + RAF + --parallax-y CSS custom property, prefers-reduced-motion guard), initImageModal() (lightbox con event delegation en document.body, focus trap, Esc/overlay/button close, iOS scroll-lock en body+documentElement)
 
 ## Lightbox Modal (M013)
 - `#img-modal` — modal dialog con `role="dialog"`, `aria-modal="true"`, `hidden` por defecto; `.modal-close` button; `.img-modal__img` para imagen grande; `.img-modal__caption` para caption
@@ -43,3 +43,7 @@ Texto + imágenes + videos + animaciones + sonidos ambientales. Sin narración d
 - Event delegation lightbox: document.body addEventListener + e.target.closest('.card-image img') — captura clicks en imágenes existentes y reveladas dinámicamente sin re-registro
 - IIFE ordering invariant: modal HTML debe aparecer antes del script tag; tabindex="0" en .card-image img es señal diagnóstica (null = init falló)
 - lastTrigger focus restore: guardar referencia al trigger antes de openModal(), devolver focus en closeModal(), nullear tras close
+- Batch card processing: usar script Node.js para aplicar wrapping de markup repetitivo (card-expand-toggle/card-detail) a decenas de cards — más fiable que heredocs o edición manual en Windows/Git Bash
+- initExpandCollapse multi-período: scope .site-main cubre colonial, revolución y nacional con un solo event delegation; cualquier card-expand-toggle en cualquier período funciona automáticamente
+- content-visibility per-período override: period--revolucion usa content-visibility:visible como excepción explícita cuando el período ocupa >80% del viewport — el browser no gana nada con auto y puede introducir jank
+- timeline-aside fixed bajo nav: top:calc(var(--nav-height,3.5rem)+Nrem) es el patrón para elementos position:fixed que deben quedar debajo del nav sticky sin usar top:50%/translateY
