@@ -348,7 +348,8 @@
    */
   function initExpandCollapse() {
     var EXPAND_PREFIX = '[Expand]';
-    var section = document.getElementById('periodo-revolucion');
+    // M022: expanded scope from #periodo-revolucion to .site-main to cover all periods
+    var section = document.querySelector('.site-main') || document.getElementById('periodo-revolucion');
 
     if (!section) {
       console.warn(EXPAND_PREFIX, '#periodo-revolucion not found — expand/collapse idle.');

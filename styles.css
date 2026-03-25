@@ -344,7 +344,13 @@ body::before {
   padding: var(--space-3xl) var(--space-lg);
   border-bottom: 1px solid var(--color-divider);
   content-visibility: auto;
-  contain-intrinsic-size: 0 2400px; /* conservative estimate; avoids layout jank */
+  contain-intrinsic-size: 0 3200px; /* updated M022: ~avg of colonial(3955) and nacional(2657) */
+}
+
+/* Override per-period: periodo-revolucion is always in viewport — skip content-visibility */
+.period--revolucion {
+  content-visibility: visible;
+  contain-intrinsic-size: none;
 }
 
 /* Parallax background layer — driven by --parallax-y custom property set in app.js */
@@ -602,8 +608,7 @@ body::before {
 .timeline-aside {
   position: fixed;
   left: var(--space-lg);
-  top: 50%;
-  transform: translateY(-50%);
+  top: calc(var(--nav-height, 3.5rem) + 3rem); /* M022: was top:50%/translateY(-50%) — overlapped hero */
   z-index: 90;
   pointer-events: none;
 }
@@ -2009,7 +2014,10 @@ body::before {
   z-index: 90;
   display: flex;
   flex-wrap: nowrap;
-  justify-content: center;
+  justify-content: flex-start; /* was: center — caused overflow with 9 tabs (M022/S01/T01) */
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none; /* Firefox */
   gap: 0;
   padding: 0 var(--space-md);
   background: rgba(237, 230, 214, 0.96); /* --color-bg-warm with alpha */
@@ -2018,6 +2026,10 @@ body::before {
   border-bottom: 1px solid rgba(116, 172, 223, 0.25);
   margin-bottom: var(--space-xl);
   /* Contain to #periodo-revolucion: rendered inside it, sticky only within that section */
+}
+
+.sub-nav::-webkit-scrollbar {
+  display: none;
 }
 
 .sub-nav__link {
@@ -2077,17 +2089,7 @@ body::before {
 
 @media (max-width: 640px) {
   .sub-nav {
-    justify-content: flex-start;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none; /* Firefox */
-    gap: 0;
     padding: 0 var(--space-sm);
-  }
-
-  /* Hide scrollbar on WebKit */
-  .sub-nav::-webkit-scrollbar {
-    display: none;
   }
 
   .sub-nav__link {

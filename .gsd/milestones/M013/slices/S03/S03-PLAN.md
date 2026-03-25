@@ -57,7 +57,7 @@ gh run list -R MaquedaPaul/historia-argentina-haciendo-zoom-en-alberdi --limit 3
 
 ## Tasks
 
-- [ ] **T01: Merge milestone/M013 → main, push, and verify live site** `est:20m`
+- [x] **T01: Merge milestone/M013 → main, push, and verify live site** `est:20m`
   - Why: All M013 code is on the `milestone/M013` worktree branch; `origin/main` (the GitHub Pages source) lags behind. This task does the merge, push, and post-deploy verification.
   - Files: `C:/Users/gabri/Desktop/historia/` (main repo root — git operations run here, not in the worktree)
   - Do: Run pre-flight gate → switch to `main` in the main repo → merge `milestone/M013` → push → poll Pages API until `built` → curl-verify live URL
