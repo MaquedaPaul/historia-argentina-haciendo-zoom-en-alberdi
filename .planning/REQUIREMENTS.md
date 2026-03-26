@@ -18,7 +18,7 @@ Requirements for M023: Guerras de Independencia — Alto Peru y la Guerra Gaucha
 ### Arco Narrativo
 
 - [ ] **ARCO-01**: User puede leer la card conectora "Por que Chile" — interpretacion historiografica de por que San Martin descarto la ruta del norte y cruzo los Andes
-- [ ] **ARCO-02**: Nuevo sub-periodo `rev-alto-peru-guerra-gaucha` integrado en la seccion revolucion con link en sub-nav
+- [x] **ARCO-02**: Nuevo sub-periodo `rev-alto-peru-guerra-gaucha` integrado en la seccion revolucion con link en sub-nav
 
 ### Guerra Gaucha
 
@@ -28,7 +28,7 @@ Requirements for M023: Guerras de Independencia — Alto Peru y la Guerra Gaucha
 ### Integracion
 
 - [ ] **INTG-01**: Conectores narrativos con hilo Alberdi (framing testigo-nino: Tucuman era base militar, su padre conocia a Belgrano, referencias a escritos adultos)
-- [ ] **INTG-02**: Cards siguen patrones existentes (card-expand-toggle, card-detail, reveal-on-scroll, imagenes Wikimedia PD/CC-BY, niveles de certeza hecho/opinion/rumor)
+- [x] **INTG-02**: Cards siguen patrones existentes (card-expand-toggle, card-detail, reveal-on-scroll, imagenes Wikimedia PD/CC-BY, niveles de certeza hecho/opinion/rumor)
 
 ## Future Requirements (M024-M025)
 
@@ -65,11 +65,11 @@ Requirements for M023: Guerras de Independencia — Alto Peru y la Guerra Gaucha
 | ALTO-04 | Phase 1 | Pending |
 | ALTO-05 | Phase 1 | Pending |
 | ARCO-01 | Phase 1 | Pending |
-| ARCO-02 | Phase 1 | Pending |
+| ARCO-02 | Phase 1 | Complete |
 | GAUC-01 | Phase 2 | Pending |
 | GAUC-02 | Phase 2 | Pending |
 | INTG-01 | Phase 3 | Pending |
-| INTG-02 | Phase 1 | Pending |
+| INTG-02 | Phase 1 | Complete |
 
 **Coverage:**
 - v1.1 requirements: 11 total

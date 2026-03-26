@@ -28,7 +28,7 @@ M023 is a content milestone that deepens the military front of Argentine indepen
   5. User can expand "Por que Chile" synthesis card and read the historiographic argument linking northern failures to the Andean strategy
 **Plans**: 3 plans
 Plans:
-- [ ] 01-01-PLAN.md — CSS rule for .card-nota-historiografica + sub-nav link + sub-period skeleton
+- [x] 01-01-PLAN.md — CSS rule for .card-nota-historiografica + sub-nav link + sub-period skeleton
 - [ ] 01-02-PLAN.md — Battle cards: Suipacha, Huaqui (with nota-historiografica), Exodo Jujeno
 - [ ] 01-03-PLAN.md — Battle cards: Vilcapugio/Ayohuma, Sipe-Sipe + synthesis card "Por que Chile"
 **UI hint**: yes
@@ -57,6 +57,6 @@ Plans:
 
 | Phase | Milestone | Plans Complete | Status | Completed |
 |-------|-----------|----------------|--------|-----------|
-| 1. Estructura y Arco del Norte | M023 | 0/3 | Planned | - |
+| 1. Estructura y Arco del Norte | M023 | 1/3 | In Progress|  |
 | 2. Guerra Gaucha | M023 | 0/? | Not started | - |
 | 3. Conector de Cierre y Verificacion | M023 | 0/? | Not started | - |
