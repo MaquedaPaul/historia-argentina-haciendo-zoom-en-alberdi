@@ -3,8 +3,8 @@ gsd_state_version: 1.0
 milestone: v1.1
 milestone_name: milestone
 status: executing
-stopped_at: Completed 01-01-PLAN.md
-last_updated: "2026-03-26T05:48:51.405Z"
+stopped_at: Completed 01-02-PLAN.md
+last_updated: "2026-03-26T05:55:09.567Z"
 last_activity: 2026-03-26
 progress:
   total_phases: 3
@@ -26,7 +26,7 @@ See: .planning/PROJECT.md (updated 2026-03-26)
 ## Current Position
 
 Phase: 01 (estructura-y-arco-del-norte) — EXECUTING
-Plan: 2 of 3
+Plan: 3 of 3
 Status: Ready to execute
 Last activity: 2026-03-26
 
@@ -48,6 +48,7 @@ Progress: [░░░░░░░░░░] 0%
 
 *Updated after each plan completion*
 | Phase 01-estructura-y-arco-del-norte P01 | 5 | 2 tasks | 2 files |
+| Phase 01-estructura-y-arco-del-norte P02 | 3.5 | 3 tasks | 1 files |
 
 ## Accumulated Context
 
@@ -60,6 +61,7 @@ Recent decisions affecting current work:
 - M023 setup: Zero JS changes needed — event delegation handles all new cards automatically
 - M023 setup: Alberdi framing = witness-child only (age 1-11 during 1810-1821); no participant framing
 - [Phase 01-estructura-y-arco-del-norte]: .card-nota-historiografica added as generic reusable callout class — applies retroactively to all existing unstyled uses site-wide
+- [Phase 01-estructura-y-arco-del-norte]: No Wikimedia images for ALTO-01/02/03 cards — URLs returned 404/429 during verification; all three cards skip card-image block per D-08
 
 ### Pending Todos
 
@@ -73,6 +75,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-03-26T05:48:51.398Z
-Stopped at: Completed 01-01-PLAN.md
+Last session: 2026-03-26T05:55:09.560Z
+Stopped at: Completed 01-02-PLAN.md
 Resume file: None
