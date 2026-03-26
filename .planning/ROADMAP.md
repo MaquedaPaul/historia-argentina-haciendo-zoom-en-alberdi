@@ -26,7 +26,11 @@ M023 is a content milestone that deepens the military front of Argentine indepen
   3. User can expand the Huaqui card and see the nota-historiografica on the Castelli controversy
   4. User can expand Exodo Jujeno, Vilcapugio/Ayohuma, and Sipe-Sipe cards — each with verified Wikimedia image and certeza marker
   5. User can expand "Por que Chile" synthesis card and read the historiographic argument linking northern failures to the Andean strategy
-**Plans**: TBD
+**Plans**: 3 plans
+Plans:
+- [ ] 01-01-PLAN.md — CSS rule for .card-nota-historiografica + sub-nav link + sub-period skeleton
+- [ ] 01-02-PLAN.md — Battle cards: Suipacha, Huaqui (with nota-historiografica), Exodo Jujeno
+- [ ] 01-03-PLAN.md — Battle cards: Vilcapugio/Ayohuma, Sipe-Sipe + synthesis card "Por que Chile"
 **UI hint**: yes
 
 ### Phase 2: Guerra Gaucha
@@ -53,6 +57,6 @@ M023 is a content milestone that deepens the military front of Argentine indepen
 
 | Phase | Milestone | Plans Complete | Status | Completed |
 |-------|-----------|----------------|--------|-----------|
-| 1. Estructura y Arco del Norte | M023 | 0/? | Not started | - |
+| 1. Estructura y Arco del Norte | M023 | 0/3 | Planned | - |
 | 2. Guerra Gaucha | M023 | 0/? | Not started | - |
 | 3. Conector de Cierre y Verificacion | M023 | 0/? | Not started | - |
