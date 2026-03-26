@@ -18,10 +18,13 @@ Narrar la historia argentina de forma inmersiva y verificable, con Alberdi como 
 
 ### Active
 
-- [ ] Cards detalladas de las expediciones al Alto Peru (Huaqui, Vilcapugio, Ayohuma, Sipe-Sipe)
 - [ ] Guemes: perfil, guerra gaucha, defensa del norte, muerte 1821
 - [ ] Guerrillas altoperuanas (republiquetas: Padilla, Warnes, Juana Azurduy)
-- [ ] Conexion narrativa: por que el norte se perdio y San Martin fue por Chile
+
+### Validated in Phase 1: Estructura y Arco del Norte
+
+- Cards detalladas de las expediciones al Alto Peru (Suipacha, Huaqui, Exodo Jujeno, Vilcapugio/Ayohuma, Sipe-Sipe) — Phase 1
+- Conexion narrativa: por que el norte se perdio y San Martin fue por Chile (ARCO-01 synthesis card) — Phase 1
 
 ## Current Milestone: v1.1 (M023) Guerras de Independencia — Alto Peru y la Guerra Gaucha
 
@@ -49,7 +52,7 @@ Narrar la historia argentina de forma inmersiva y verificable, con Alberdi como 
 
 **Tech Stack:** HTML5 + CSS3 + JavaScript vanilla. Single page. Zero build step. Deploy en hosting estatico.
 
-**Estado actual:** M001-M022 completados. Sitio live en GitHub Pages. 34 event cards + 3 timelines animados + 52 reveal elements. Seccion colonial (1500-1800): 7 cards. Seccion revolucion (1800-1860): 20 cards en 4 sub-periodos. Seccion nacional (1860-1900): 7 cards.
+**Estado actual:** M001-M022 completados. M023 Phase 1 complete — 6 new cards in Alto Peru sub-period. Sitio live en GitHub Pages. 40 event cards + 3 timelines animados + 58 reveal elements. Seccion colonial (1500-1800): 7 cards. Seccion revolucion (1800-1860): 26 cards en 5 sub-periodos. Seccion nacional (1860-1900): 7 cards.
 
 **Contenido multimedia:** Texto + imagenes + videos + animaciones + sonidos ambientales. Sin narracion de voz.
 
@@ -97,4 +100,4 @@ This document evolves at phase transitions and milestone boundaries.
 4. Update Context with current state
 
 ---
-*Last updated: 2026-03-26 after milestone v1.1 (M023) definition*
+*Last updated: 2026-03-26 after Phase 1 (Estructura y Arco del Norte) completion*
