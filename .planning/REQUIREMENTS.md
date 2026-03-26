@@ -59,23 +59,23 @@ Requirements for M023: Guerras de Independencia — Alto Peru y la Guerra Gaucha
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| ALTO-01 | Pending | Pending |
-| ALTO-02 | Pending | Pending |
-| ALTO-03 | Pending | Pending |
-| ALTO-04 | Pending | Pending |
-| ALTO-05 | Pending | Pending |
-| ARCO-01 | Pending | Pending |
-| ARCO-02 | Pending | Pending |
-| GAUC-01 | Pending | Pending |
-| GAUC-02 | Pending | Pending |
-| INTG-01 | Pending | Pending |
-| INTG-02 | Pending | Pending |
+| ALTO-01 | Phase 1 | Pending |
+| ALTO-02 | Phase 1 | Pending |
+| ALTO-03 | Phase 1 | Pending |
+| ALTO-04 | Phase 1 | Pending |
+| ALTO-05 | Phase 1 | Pending |
+| ARCO-01 | Phase 1 | Pending |
+| ARCO-02 | Phase 1 | Pending |
+| GAUC-01 | Phase 2 | Pending |
+| GAUC-02 | Phase 2 | Pending |
+| INTG-01 | Phase 3 | Pending |
+| INTG-02 | Phase 1 | Pending |
 
 **Coverage:**
 - v1.1 requirements: 11 total
-- Mapped to phases: 0 (pending roadmap)
-- Unmapped: 11
+- Mapped to phases: 11
+- Unmapped: 0
 
 ---
 *Requirements defined: 2026-03-26*
-*Last updated: 2026-03-26 after initial definition*
+*Last updated: 2026-03-26 after roadmap creation*
