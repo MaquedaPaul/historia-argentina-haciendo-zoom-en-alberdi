@@ -1322,6 +1322,21 @@ body::before {
   box-shadow: var(--shadow-elevated), inset 0 0 0 1px var(--certeza-rumor-mid);
 }
 
+/* ---------- Nota historiografica callout — inline within card-detail ---------- */
+/* Generic class used in card expand panels to flag contested interpretations.
+   Retroactively styles existing .card-nota-historiografica paragraphs site-wide. */
+
+.card-nota-historiografica {
+  margin-top: var(--space-md);
+  padding: var(--space-sm) var(--space-md);
+  border-left: 3px solid var(--certeza-opinion);
+  background: var(--certeza-opinion-soft);
+  font-size: 0.875rem;
+  line-height: 1.6;
+  color: var(--color-text);
+  border-radius: 0 4px 4px 0;
+}
+
 /* ---- Responsive adjustments for certeza cards ---- */
 
 @media (max-width: 48rem) {
@@ -1691,37 +1706,47 @@ body::before {
   transform: scale(0);
 }
 
-/* Staggered dot entrance — 10 markers spread over 0.15s–2.3s
-   Delays are proportional to each marker's position on the 1800-1860 timeline */
+/* Staggered dot entrance — 13 markers spread over 0.10s–2.80s
+   Delays are proportional to each marker's position on the 1800-1860 timeline
+   nth-child(1) = progress div; markers start at nth-child(2) */
 .revolucion-timeline.reveal--visible .revolucion-timeline__marker:nth-child(2) .revolucion-timeline__dot {
-  animation: rev-marker-pop 400ms var(--ease-out) 0.15s forwards;
+  animation: rev-marker-pop 400ms var(--ease-out) 0.10s forwards;
 }
 .revolucion-timeline.reveal--visible .revolucion-timeline__marker:nth-child(3) .revolucion-timeline__dot {
-  animation: rev-marker-pop 400ms var(--ease-out) 0.45s forwards;
+  animation: rev-marker-pop 400ms var(--ease-out) 0.20s forwards;
 }
 .revolucion-timeline.reveal--visible .revolucion-timeline__marker:nth-child(4) .revolucion-timeline__dot {
-  animation: rev-marker-pop 400ms var(--ease-out) 0.65s forwards;
+  animation: rev-marker-pop 400ms var(--ease-out) 0.30s forwards;
 }
 .revolucion-timeline.reveal--visible .revolucion-timeline__marker:nth-child(5) .revolucion-timeline__dot {
-  animation: rev-marker-pop 400ms var(--ease-out) 0.90s forwards;
+  animation: rev-marker-pop 400ms var(--ease-out) 0.50s forwards;
 }
 .revolucion-timeline.reveal--visible .revolucion-timeline__marker:nth-child(6) .revolucion-timeline__dot {
-  animation: rev-marker-pop 400ms var(--ease-out) 1.05s forwards;
+  animation: rev-marker-pop 400ms var(--ease-out) 0.75s forwards;
 }
 .revolucion-timeline.reveal--visible .revolucion-timeline__marker:nth-child(7) .revolucion-timeline__dot {
-  animation: rev-marker-pop 400ms var(--ease-out) 1.30s forwards;
+  animation: rev-marker-pop 400ms var(--ease-out) 0.95s forwards;
 }
 .revolucion-timeline.reveal--visible .revolucion-timeline__marker:nth-child(8) .revolucion-timeline__dot {
-  animation: rev-marker-pop 400ms var(--ease-out) 1.45s forwards;
+  animation: rev-marker-pop 400ms var(--ease-out) 1.15s forwards;
 }
 .revolucion-timeline.reveal--visible .revolucion-timeline__marker:nth-child(9) .revolucion-timeline__dot {
-  animation: rev-marker-pop 400ms var(--ease-out) 1.75s forwards;
+  animation: rev-marker-pop 400ms var(--ease-out) 1.30s forwards;
 }
 .revolucion-timeline.reveal--visible .revolucion-timeline__marker:nth-child(10) .revolucion-timeline__dot {
-  animation: rev-marker-pop 400ms var(--ease-out) 2.05s forwards;
+  animation: rev-marker-pop 400ms var(--ease-out) 1.55s forwards;
 }
 .revolucion-timeline.reveal--visible .revolucion-timeline__marker:nth-child(11) .revolucion-timeline__dot {
-  animation: rev-marker-pop 400ms var(--ease-out) 2.30s forwards;
+  animation: rev-marker-pop 400ms var(--ease-out) 1.80s forwards;
+}
+.revolucion-timeline.reveal--visible .revolucion-timeline__marker:nth-child(12) .revolucion-timeline__dot {
+  animation: rev-marker-pop 400ms var(--ease-out) 2.10s forwards;
+}
+.revolucion-timeline.reveal--visible .revolucion-timeline__marker:nth-child(13) .revolucion-timeline__dot {
+  animation: rev-marker-pop 400ms var(--ease-out) 2.50s forwards;
+}
+.revolucion-timeline.reveal--visible .revolucion-timeline__marker:nth-child(14) .revolucion-timeline__dot {
+  animation: rev-marker-pop 400ms var(--ease-out) 2.80s forwards;
 }
 
 @keyframes rev-marker-pop {
@@ -1764,34 +1789,43 @@ body::before {
 
 /* Labels appear slightly after their dot */
 .revolucion-timeline.reveal--visible .revolucion-timeline__marker:nth-child(2) .revolucion-timeline__label {
-  animation: rev-label-fade 400ms var(--ease-out) 0.35s forwards;
+  animation: rev-label-fade 400ms var(--ease-out) 0.30s forwards;
 }
 .revolucion-timeline.reveal--visible .revolucion-timeline__marker:nth-child(3) .revolucion-timeline__label {
-  animation: rev-label-fade 400ms var(--ease-out) 0.65s forwards;
+  animation: rev-label-fade-above 400ms var(--ease-out) 0.40s forwards;
 }
 .revolucion-timeline.reveal--visible .revolucion-timeline__marker:nth-child(4) .revolucion-timeline__label {
-  animation: rev-label-fade 400ms var(--ease-out) 0.85s forwards;
+  animation: rev-label-fade 400ms var(--ease-out) 0.50s forwards;
 }
 .revolucion-timeline.reveal--visible .revolucion-timeline__marker:nth-child(5) .revolucion-timeline__label {
-  animation: rev-label-fade 400ms var(--ease-out) 1.10s forwards;
+  animation: rev-label-fade 400ms var(--ease-out) 0.70s forwards;
 }
 .revolucion-timeline.reveal--visible .revolucion-timeline__marker:nth-child(6) .revolucion-timeline__label {
-  animation: rev-label-fade 400ms var(--ease-out) 1.25s forwards;
+  animation: rev-label-fade 400ms var(--ease-out) 0.95s forwards;
 }
 .revolucion-timeline.reveal--visible .revolucion-timeline__marker:nth-child(7) .revolucion-timeline__label {
-  animation: rev-label-fade 400ms var(--ease-out) 1.50s forwards;
+  animation: rev-label-fade-above 400ms var(--ease-out) 1.15s forwards;
 }
 .revolucion-timeline.reveal--visible .revolucion-timeline__marker:nth-child(8) .revolucion-timeline__label {
-  animation: rev-label-fade 400ms var(--ease-out) 1.65s forwards;
+  animation: rev-label-fade 400ms var(--ease-out) 1.35s forwards;
 }
 .revolucion-timeline.reveal--visible .revolucion-timeline__marker:nth-child(9) .revolucion-timeline__label {
-  animation: rev-label-fade 400ms var(--ease-out) 1.95s forwards;
+  animation: rev-label-fade-above 400ms var(--ease-out) 1.50s forwards;
 }
 .revolucion-timeline.reveal--visible .revolucion-timeline__marker:nth-child(10) .revolucion-timeline__label {
-  animation: rev-label-fade 400ms var(--ease-out) 2.25s forwards;
+  animation: rev-label-fade 400ms var(--ease-out) 1.75s forwards;
 }
 .revolucion-timeline.reveal--visible .revolucion-timeline__marker:nth-child(11) .revolucion-timeline__label {
-  animation: rev-label-fade 400ms var(--ease-out) 2.50s forwards;
+  animation: rev-label-fade-above 400ms var(--ease-out) 2.00s forwards;
+}
+.revolucion-timeline.reveal--visible .revolucion-timeline__marker:nth-child(12) .revolucion-timeline__label {
+  animation: rev-label-fade 400ms var(--ease-out) 2.30s forwards;
+}
+.revolucion-timeline.reveal--visible .revolucion-timeline__marker:nth-child(13) .revolucion-timeline__label {
+  animation: rev-label-fade 400ms var(--ease-out) 2.70s forwards;
+}
+.revolucion-timeline.reveal--visible .revolucion-timeline__marker:nth-child(14) .revolucion-timeline__label {
+  animation: rev-label-fade 400ms var(--ease-out) 3.00s forwards;
 }
 
 @keyframes rev-label-fade {
