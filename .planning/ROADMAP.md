@@ -10,7 +10,7 @@ M023 is a content milestone that deepens the military front of Argentine indepen
 
 ## Phases
 
-- [ ] **Phase 1: Estructura y Arco del Norte** - New sub-period scaffold + five battle cards + "Por que Chile" synthesis card
+- [x] **Phase 1: Estructura y Arco del Norte** - New sub-period scaffold + five battle cards + "Por que Chile" synthesis card (completed 2026-03-26)
 - [ ] **Phase 2: Guerra Gaucha** - Guemes profile card + Azurduy/republiquetas card
 - [ ] **Phase 3: Conector de Cierre y Verificacion** - Alberdi exit connector + animation and integration verification pass
 
@@ -29,8 +29,8 @@ M023 is a content milestone that deepens the military front of Argentine indepen
 **Plans**: 3 plans
 Plans:
 - [x] 01-01-PLAN.md — CSS rule for .card-nota-historiografica + sub-nav link + sub-period skeleton
-- [ ] 01-02-PLAN.md — Battle cards: Suipacha, Huaqui (with nota-historiografica), Exodo Jujeno
-- [ ] 01-03-PLAN.md — Battle cards: Vilcapugio/Ayohuma, Sipe-Sipe + synthesis card "Por que Chile"
+- [x] 01-02-PLAN.md — Battle cards: Suipacha, Huaqui (with nota-historiografica), Exodo Jujeno
+- [x] 01-03-PLAN.md — Battle cards: Vilcapugio/Ayohuma, Sipe-Sipe + synthesis card "Por que Chile"
 **UI hint**: yes
 
 ### Phase 2: Guerra Gaucha
@@ -57,6 +57,6 @@ Plans:
 
 | Phase | Milestone | Plans Complete | Status | Completed |
 |-------|-----------|----------------|--------|-----------|
-| 1. Estructura y Arco del Norte | M023 | 1/3 | In Progress|  |
+| 1. Estructura y Arco del Norte | M023 | 3/3 | Complete   | 2026-03-26 |
 | 2. Guerra Gaucha | M023 | 0/? | Not started | - |
 | 3. Conector de Cierre y Verificacion | M023 | 0/? | Not started | - |

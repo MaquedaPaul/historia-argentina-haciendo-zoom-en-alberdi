@@ -12,12 +12,12 @@ Requirements for M023: Guerras de Independencia — Alto Peru y la Guerra Gaucha
 - [x] **ALTO-01**: User puede leer sobre la victoria de Suipacha (1810) — primera victoria patriota, Balcarce y Castelli en el Alto Peru
 - [x] **ALTO-02**: User puede leer sobre el desastre de Huaqui (1811) — perdida del Alto Peru, con nota historiografica sobre la controversia Castelli/Balcarce
 - [x] **ALTO-03**: User puede leer sobre el Exodo Jujeno (1812) — Belgrano ordena tierra arrasada, evacuacion masiva hacia Tucuman
-- [ ] **ALTO-04**: User puede leer sobre Vilcapugio y Ayohuma (1813) — derrotas consecutivas de Belgrano tras las victorias de Tucuman y Salta
-- [ ] **ALTO-05**: User puede leer sobre Sipe-Sipe (1815) — ultima expedicion formal al Alto Peru, derrota definitiva bajo Rondeau
+- [x] **ALTO-04**: User puede leer sobre Vilcapugio y Ayohuma (1813) — derrotas consecutivas de Belgrano tras las victorias de Tucuman y Salta
+- [x] **ALTO-05**: User puede leer sobre Sipe-Sipe (1815) — ultima expedicion formal al Alto Peru, derrota definitiva bajo Rondeau
 
 ### Arco Narrativo
 
-- [ ] **ARCO-01**: User puede leer la card conectora "Por que Chile" — interpretacion historiografica de por que San Martin descarto la ruta del norte y cruzo los Andes
+- [x] **ARCO-01**: User puede leer la card conectora "Por que Chile" — interpretacion historiografica de por que San Martin descarto la ruta del norte y cruzo los Andes
 - [x] **ARCO-02**: Nuevo sub-periodo `rev-alto-peru-guerra-gaucha` integrado en la seccion revolucion con link en sub-nav
 
 ### Guerra Gaucha
@@ -62,9 +62,9 @@ Requirements for M023: Guerras de Independencia — Alto Peru y la Guerra Gaucha
 | ALTO-01 | Phase 1 | Complete |
 | ALTO-02 | Phase 1 | Complete |
 | ALTO-03 | Phase 1 | Complete |
-| ALTO-04 | Phase 1 | Pending |
-| ALTO-05 | Phase 1 | Pending |
-| ARCO-01 | Phase 1 | Pending |
+| ALTO-04 | Phase 1 | Complete |
+| ALTO-05 | Phase 1 | Complete |
+| ARCO-01 | Phase 1 | Complete |
 | ARCO-02 | Phase 1 | Complete |
 | GAUC-01 | Phase 2 | Pending |
 | GAUC-02 | Phase 2 | Pending |
