@@ -45,3 +45,10 @@ tmp/
 
 # ── GSD baseline (auto-generated) ──
 .gsd
+
+# Claude Code local
+.claude/settings.local.json
+.claude/worktrees/
+
+# Planning artifacts (GSD internal)
+.planning/
