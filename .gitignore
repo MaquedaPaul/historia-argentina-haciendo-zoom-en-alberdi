@@ -52,3 +52,8 @@ tmp/
 
 # Planning artifacts (GSD internal)
 .planning/
+
+# Temp/draft files
+temp-*
+tmp-*
+S01-CONTENT-DRAFT*.md
